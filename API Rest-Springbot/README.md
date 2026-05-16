@@ -32,39 +32,7 @@ Frontend (client.html) → API Spring Boot (Backend) → Supabase (Banco de Dado
 ```
 **Problema:** JavaScript do navegador não consegue executar código Java. Java é backend, JavaScript é frontend.
 
----
 
-### Erro 2: **Mistura de responsabilidades**
-- `client.html` tinha código de backend (Java)
-- Não havia separação clara entre frontend e backend
-- **Solução:** Frontend em HTML/JS, Backend em Spring Boot
-
----
-
-### Erro 3: **Falta de estrutura padrão de um projeto Spring**
-- Sem `pom.xml` (gerenciador de dependências)
-- Sem `application.properties` (configurações)
-- Sem classe principal da aplicação
-- Sem Controller para expor endpoints
-- **Solução:** Estrutura completa de Maven + Spring Boot
-
----
-
-### Erro 4: **Credenciais e configurações hardcoded**
-```java
-// ❌ ERRADO
-.baseUrl("https://supabase.co")
-.defaultHeader("apikey", "SUA_ANON_KEY")
-```
-**Problema:** Chaves secretas no código são inseguras.
-**Solução:** Usar `application.properties` com variáveis de ambiente
-
----
-
-### Erro 5: **Código duplicado e incompleto**
-O arquivo `SupabaseService.java` tinha duas implementações diferentes misturadas.
-
----
 
 ## ✅ Como está organizado agora?
 
